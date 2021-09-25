@@ -20,3 +20,5 @@ export CPPFLAGS="-I/opt/homebrew/opt/zlib/include"
 export PKG_CONFIG_PATH="/opt/homebrew/opt/zlib/lib/pkgconfig"
 
 export PATH="/opt/homebrew/opt/jpeg-turbo/bin:$PATH"
+
+ssh-add -A
