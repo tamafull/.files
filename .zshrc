@@ -12,11 +12,8 @@ setopt auto_pushd
 setopt hist_ignore_all_dups
 setopt correct
 setopt auto_pushd
-# alias z='code .zshrc'
-alias z='code ~/dev/.files/.baseshrc'
-# alias zp='code .zprofile'
-alias zp='code ~/dev/.files/.mac_profile'
-alias dein='code ~/.cache/dein.toml/'
+alias z='code ~/dev/.files'
+alias dein='code ~/.cache/dein.toml/' # Mac買い換えたら消すかも
 alias deinl='code ~/.cache/dein_lazy.toml/'
 
 # zsh専用

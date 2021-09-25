@@ -1,0 +1,65 @@
+# 空のGitHubリポジトリと紐付けを行う
+# $1: リポジトリ名
+glink()
+{
+  if [ $# -ne 0 ]; then
+    git init
+    git remote add origin git@github.com:tamafull/$1.git
+    git branch -M main
+    git add .
+    git commit -m 'Initial commit'
+    git push -u origin main
+  else
+    echo "$\1: Repository Name"
+  fi
+}
+
+# 変更を全てPushする
+# $1: コミットメッセージ
+gall()
+{
+  git add .
+  if [ $# -ne 0 ]; then
+    git commit -m $1
+  else
+    git commit
+  fi
+  git push
+}
+
+# ssh key作成
+# $1: キーの名前
+# $2: コメント
+sshg()
+{
+  if [ $# -eq 1 ]; then
+    ssh-keygen -t rsa -b 4096 -f $1
+  elif [ $# -eq 2 ]; then
+    ssh-keygen -t rsa -b 4096 -f $1 -C $2
+  else
+    echo "$\1: Key Name"
+    echo "$\2: Comment"
+    return
+  fi
+
+  pbcopy < ~/.ssh/$1.pub
+  echo "Step1 Done. Do you register on GitHub? Then follow the steps below."
+  echo "Step2: Add PublicKey(Already run $ pbcopy < ~/.ssh/$1.pub)"
+  echo "Step3: ~/.ssh/config"
+  echo "Step4: Run 'ssh-add ~/.ssh/$1'"
+  echo "Step5: Run 'ssh -T git@github.com'"
+}
+
+# Static Site Generator
+# alias gtb='gatsby'
+# alias gtbd='gatsby develop'
+# alias gtbb='gatsby build'
+# alias gtbc='gatsby clean'
+alias xs='hexo server'
+alias xn='hexo new'
+alias cx='cd ~/site/hexo-blog'
+alias blog='code ~/site/hexo-blog'
+
+# クラウド
+alias dd='cd ~/Library/Mobile\ Documents/com~apple~CloudDocs'
+alias d='cd ~/Google\ Drive/マイドライブ/'
