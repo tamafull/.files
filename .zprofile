@@ -1,5 +1,3 @@
-# export LSCOLORS=xbfxcxdxbxegedabagacad # 環境によって変える
-
 eval "$(/opt/homebrew/bin/brew shellenv)"
 export PATH="$PATH:$HOME/Library/flutter/bin"
 export PATH="$PATH:$HOME/Library/Android/sdk/tools/bin/"
