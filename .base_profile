@@ -1,16 +1,21 @@
-# OS毎の設定
-if [ "$(uname)" = 'Darwin' ]; then
-  # Mac
-  source "$(cd $(dirname $0); pwd)/.zprofile"
-elif [ "$(expr substr $(uname -s) 1 5)" = 'Linux' ]; then
-  # Linux
-  source "$(cd $(dirname $0); pwd)/.profile"
-elif [ "$(expr substr $(uname -s) 1 10)" = 'MINGW32_NT' ]; then
-  # Windows
-  source "$(cd $(dirname $0); pwd)/.bash_profile"
-  # alias pbcopy="/c/Windows/System32/clip.exe"
-  # alias vi=vim
-  # alias targz="tar xvzf "
+THIS_DIR="$(cd $(dirname $0); pwd)/"
+
+# プライベート用の設定
+if [ "${PRIVATEPC+foo}" ]; then
+  source "${THIS_DIR}private/.base_profile"
 else
-  echo "$(uname -a)"
+  # OS毎の設定
+  if [ "$(uname)" = 'Darwin' ]; then
+    # Mac
+    source "$THIS_DIR.zprofile"
+  elif [ "$(expr substr $(uname -s) 1 5)" = 'Linux' ]; then
+    # Linux
+    source "$THIS_DIR.profile"
+  elif [ "$(expr substr $(uname -s) 1 10)" = 'MINGW32_NT' ]; then
+    # Windows
+    source "$THIS_DIR.bash_profile"
+  else
+    echo "$(uname -a)"
+  fi
 fi
+

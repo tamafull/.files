@@ -100,7 +100,7 @@ THIS_DIR="$(cd $(dirname $0); pwd)/"
 
 # プライベート用の設定
 if [ "${PRIVATEPC+foo}" ]; then
-  source "$THIS_DIR.base_private"
+  source "${THIS_DIR}private/.baseshrc"
 fi
 
 # OS毎の設定
