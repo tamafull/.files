@@ -1,0 +1,44 @@
+[[ "$-" != *i* ]] && return
+
+alias pbcopy="/c/Windows/System32/clip.exe"
+sudo ()
+{
+  command=$1
+  shift
+  powershell -Command Start-Process -Verb runas ${command} { $@ }
+}
+alias vi=vim
+alias targz="tar xvzf "
+
+# Ruby on Rails
+alias rdown="taskkill //F //fi 'IMAGENAME eq ruby.exe'"
+alias irb='winpty "$(which irb).cmd"'
+alias rails='winpty "$(which rails).bat"'
+
+# 初回作成
+# $1: ディレクトリ名
+rnew ()
+{
+  if [ $# -ne 0 ]; then
+    echo -e "# frozen_string_literal: true\n\nsource 'https://rubygems.org'\ngem 'rails'\ngem 'bootsnap'\ngem 'webpacker'\ngem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]" > Gemfile
+    bundle install --path vendor/bundle
+    bundle exec rails new $1 #--database=postgresql --webpack=vue # $@
+    rm -rf vendor
+    rm -rf .bundle
+    rm Gemfile
+    rm Gemfile.lock
+    cd $1
+  else
+    echo "not argments"
+  fi
+}
+
+alias d="cd /E/Users/tamas/Google\ Drive/Documents"
+alias cdd="cd /E/dev"
+alias cdg="cd /E/Github"
+
+alias ls="ls --show-control-chars"
+
+# DB起動
+alias psqlup="sudo net start postgresql-x64-12"
+alias psqldown="sudo net stop postgresql-x64-12"
