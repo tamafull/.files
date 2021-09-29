@@ -1,18 +1,13 @@
-THIS_DIR="$(cd $(dirname $0); pwd)/"
-
-if [ -f "$THIS_DIR.base_profile" ] ; then
-echo "aaaa"
-  source "$THIS_DIR.base_profile"
+if [ -f "$DOT_FILES_DIR/.base_profile" ] ; then
+  source "$DOT_FILES_DIR/.base_profile"
 fi
 
-if [ -f "$THIS_DIR.baseshrc" ] ; then
-echo "bbbb"
-  source "$THIS_DIR.baseshrc"
+if [ -f "$DOT_FILES_DIR/.baseshrc" ] ; then
+  source "$DOT_FILES_DIR/.baseshrc"
 fi
 
-if [ -f "$THIS_DIR.winrc" ] ; then
-echo "cccc"
-  source "$THIS_DIR.winrc"
+if [ -f "$DOT_FILES_DIR/.winrc" ] ; then
+  source "$DOT_FILES_DIR/.winrc"
 fi
 
 export GIT_PAGER="LESSCHARSET=utf-8 less"

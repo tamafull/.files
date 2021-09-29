@@ -96,26 +96,23 @@ alias x=''
 export EDITOR=vim
 eval "$(direnv hook $SHELL)"
 
-THIS_DIR="$(cd $(dirname $0); pwd)/"
+# THIS_DIR="$(cd $(dirname $0); pwd)/"
 
 # プライベート用の設定
 if [ "${PRIVATEPC+foo}" ]; then
-  source "${THIS_DIR}private/.baseshrc"
+  source "${DOT_FILES_DIR}/private/.baseshrc"
 fi
 
 # OS毎の設定
 if [ "$(uname)" = 'Darwin' ]; then
   # Mac
-  source "$THIS_DIR.zshrc"
+  source "$DOT_FILES_DIR/.zshrc"
 elif [ "$(expr substr $(uname -s) 1 5)" = 'Linux' ]; then
   # Linux
-  source "$THIS_DIR.bashrc"
-elif [ "$(expr substr $(uname -s) 1 10)" = 'MINGW32_NT' ]; then
+  source "$DOT_FILES_DIR/.bashrc"
+elif [ "$(expr substr $(uname -s) 1 5)" = 'MINGW' ]; then
   # Windows
-  source "$THIS_DIR.winrc"
-  # alias pbcopy="/c/Windows/System32/clip.exe"
-  # alias vi=vim
-  # alias targz="tar xvzf "
+  source "$DOT_FILES_DIR/.winrc"
 else
   echo "$(uname -a)"
 fi

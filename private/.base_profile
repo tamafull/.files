@@ -23,10 +23,10 @@ if [ "$(uname)" = 'Darwin' ]; then
 
 elif [ "$(expr substr $(uname -s) 1 5)" = 'Linux' ]; then
   # Linux
-  echo "$(uname -a)"
-elif [ "$(expr substr $(uname -s) 1 10)" = 'MINGW32_NT' ]; then
+  echo "Linux"
+elif [ "$(expr substr $(uname -s) 1 5)" = 'MINGW' ]; then
   # Windows
-  echo "$(uname -a)"
+  echo "Windows"
 else
   echo "$(uname -a)"
 fi

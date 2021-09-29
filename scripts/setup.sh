@@ -7,9 +7,8 @@ elif [ "$(expr substr $(uname -s) 1 5)" = 'Linux' ]; then
   # Linux
   cp "$SAMPLES_DIR.bashrc" ~/.bashrc
   cp "$SAMPLES_DIR.profile" ~/.profile
-elif [ "$(expr substr $(uname -s) 1 10)" = 'MINGW32_NT' ]; then
+elif [ "$(expr substr $(uname -s) 1 5)" = 'MINGW' ]; then
   # Windows
-  cp "$SAMPLES_DIR.bashrc" ~/.bashrc
   cp "$SAMPLES_DIR.bash_profile" ~/.bash_profile
 else
   echo "$(uname -a)"

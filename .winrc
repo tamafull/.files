@@ -34,6 +34,7 @@ rnew ()
 }
 
 alias d="cd /E/Users/tamas/Google\ Drive/Documents"
+alias dd="cd ~/OneDrive"
 alias cdd="cd /E/dev"
 alias cdg="cd /E/Github"
 

@@ -1,19 +1,19 @@
-THIS_DIR="$(cd $(dirname $0); pwd)/"
+# THIS_DIR="$(cd $(dirname $0); pwd)/"
 
 # プライベート用の設定
 if [ "${PRIVATEPC+foo}" ]; then
-  source "${THIS_DIR}private/.base_profile"
+  source "${DOT_FILES_DIR}/private/.base_profile"
 else
   # OS毎の設定
   if [ "$(uname)" = 'Darwin' ]; then
     # Mac
-    source "$THIS_DIR.zprofile"
+    source "$DOT_FILES_DIR/.zprofile"
   elif [ "$(expr substr $(uname -s) 1 5)" = 'Linux' ]; then
     # Linux
-    source "$THIS_DIR.profile"
-  elif [ "$(expr substr $(uname -s) 1 10)" = 'MINGW32_NT' ]; then
+    source "$DOT_FILES_DIR/.profile"
+  elif [ "$(expr substr $(uname -s) 1 5)" = 'MINGW' ]; then
     # Windows
-    source "$THIS_DIR.bash_profile"
+    source "$DOT_FILES_DIR/.bash_profile"
   else
     echo "$(uname -a)"
   fi
