@@ -64,6 +64,9 @@ alias sps='brew services start postgresql'
 # エディタ
 alias v='code'
 
+# 編集
+alias df="code $DOT_FILES_DIR"
+
 # 単一キーの残り（良さそうなの思いついたら使う）
 alias a=''
 # alias b=''
@@ -90,7 +93,7 @@ alias u=''
 alias w=''
 alias x=''
 # alias y=''
-# alias z=''
+alias z=''
 
 # 各種設定
 export EDITOR=vim

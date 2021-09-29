@@ -12,7 +12,6 @@ setopt auto_pushd
 setopt hist_ignore_all_dups
 setopt correct
 setopt auto_pushd
-alias z='code ~/dev/.files'
 alias dein='code ~/.cache/dein.toml/' # Mac買い換えたら消すかも
 alias deinl='code ~/.cache/dein_lazy.toml/'
 
