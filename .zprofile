@@ -1,1 +1,1 @@
-ssh-add -A
+ssh-add -A >&/dev/null
