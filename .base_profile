@@ -1,9 +1,9 @@
 # THIS_DIR="$(cd $(dirname $0); pwd)/"
 
 # プライベート用の設定
-if [ -n $PRIVATEPC ]; then
-  source "${DOT_FILES_DIR}/private/.base_profile"
-else
+# if [ -n $PRIVATEPC ]; then
+#   source "${DOT_FILES_DIR}/private/.base_profile"
+# else
   # OS毎の設定
   if [ "$(uname)" = 'Darwin' ]; then
     # Mac
@@ -17,5 +17,5 @@ else
   else
     echo "$(uname -a)"
   fi
-fi
+# fi
 
