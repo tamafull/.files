@@ -20,7 +20,7 @@ gall()
 {
   git add .
   if [ $# -ne 0 ]; then
-    git commit -m $1
+    git commit -m "$1"
   else
     git commit
   fi
