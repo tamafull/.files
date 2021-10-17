@@ -63,3 +63,7 @@ alias blog='code ~/site/hexo-blog'
 # クラウド
 alias dd='cd ~/Library/Mobile\ Documents/com~apple~CloudDocs'
 alias d='cd ~/Google\ Drive/マイドライブ/'
+
+# Flutter
+alias f='flutter'
+alias fc='flutter create'
