@@ -1,7 +1,3 @@
-if [ -f "$DOT_FILES_DIR/.base_profile" ] ; then
-  source "$DOT_FILES_DIR/.base_profile"
-fi
-
 if [ -f "$DOT_FILES_DIR/.baseshrc" ] ; then
   source "$DOT_FILES_DIR/.baseshrc"
 fi
