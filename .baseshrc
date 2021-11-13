@@ -26,6 +26,12 @@ alias gst='git status'
 alias gco='git checkout'
 alias gf='git fetch'
 alias gc='git commit'
+alias gh='git stash' # TODO: stash@{$1} ~ -m "$@"
+alias ghm='git stash push -m'
+alias gapply='git stash apply'
+alias gpop='git stash pop'
+alias gclear='git stash clear'
+alias gshl='git stash list'
 
 # Ruby on Rails
 alias b='bundle'
