@@ -15,16 +15,17 @@ glink()
 }
 
 # 変更を全てPushする
-# $1: コミットメッセージ
+# $*: コミットメッセージ
 gall()
 {
-  git add .
   if [ $# -ne 0 ]; then
-    git commit -m "$1"
+    git add .
+    git commit -m "$*"
+    git push
   else
-    git commit
+    echo 'Requires one or more arguments'
   fi
-  git push
+  
 }
 
 # ssh key作成
