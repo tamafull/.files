@@ -25,7 +25,6 @@ gall()
   else
     echo 'Requires one or more arguments'
   fi
-  
 }
 
 # ssh key作成
