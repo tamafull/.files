@@ -32,6 +32,8 @@ alias gapply='git stash apply'
 alias gpop='git stash pop'
 alias gclear='git stash clear'
 alias gshl='git stash list'
+alias gbc='git branch | grep -Ev "master|main" | xargs git branch -D'
+
 
 # Ruby on Rails
 alias b='bundle'
