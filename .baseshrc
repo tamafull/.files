@@ -61,12 +61,19 @@ alias yrb='yarn rebuild'
 # Docker
 alias dk='docker'
 alias dc='docker-compose'
+alias dcbd='docker-compose build'
 alias dcup='docker-compose up'
 alias dcdw='docker-compose down'
 alias dcupbg='docker-compose up -d'
 alias dcst='docker-compose stop'
 alias dcre='docker-compose restart'
 alias dclean='docker rm -f `docker ps -a -q`'
+rsreup () {
+  docker-compose down
+  docker-compose run web rails db:create db:migrate
+  docker-compose up -d --build
+}
+
 
 # Homebrew
 alias br='brew'
