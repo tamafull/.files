@@ -60,6 +60,13 @@ alias yrb='yarn rebuild'
 
 # Docker
 alias dk='docker'
+alias dc='docker-compose'
+alias dcup='docker-compose up'
+alias dcdw='docker-compose down'
+alias dcupbg='docker-compose up -d'
+alias dcst='docker-compose stop'
+alias dcre='docker-compose restart'
+alias dclean='docker rm -f `docker ps -a -q`'
 
 # Homebrew
 alias br='brew'
