@@ -2,7 +2,6 @@
 alias c='pbcopy'
 alias o='open'
 alias g='grep'
-alias h='cd ~'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
@@ -12,6 +11,11 @@ alias ls='ls -G'
 alias ll='ls -l'
 alias la='ls -A'
 alias l='clear && ls'
+
+# 特定のディレクトリへの移動
+alias h='cd ~'
+alias dev='if [ -n "$DEV_DIR" ]; then cd "$DEV_DIR"; else cd "$HOME/dev"; fi'
+alias tools='if [ -n "$TOOLS_DIR" ]; then cd "$TOOLS_DIR"; else cd "$HOME/tools"; fi'
 
 # Git
 alias ga='git add'
@@ -27,7 +31,7 @@ alias gco='git checkout'
 alias gcl='git clone'
 alias gf='git fetch'
 alias gc='git commit'
-alias gh='git stash' # TODO: stash@{$1} ~ -m "$@"
+alias gsh='git stash' # TODO: stash@{$1} ~ -m "$@"
 alias ghm='git stash push -m'
 alias gapply='git stash apply'
 alias gpop='git stash pop'
