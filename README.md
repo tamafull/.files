@@ -3,7 +3,8 @@
 git clone git@github.com:tamafull/.files.git ~/.files
 ```
 2. samplesディレクトリからコピー
-Git Bash
+
+Windows
 ```
 cp "$HOME/.files/samples/.bash_profile" "$HOME/"
 ```
