@@ -1,3 +1,7 @@
+# 全てのOSに共通するコマンドを定義する
+# 基本的にOSを超えてコマンドは重複しないように設計するため、実行時に走らないエイリアスや関数はここに記載すること
+# 太ってきたら切り出す
+
 # 便利系
 alias c='pbcopy'
 alias o='open'
@@ -78,7 +82,6 @@ rsreup () {
   docker-compose up -d --build
 }
 
-
 # Homebrew
 alias br='brew'
 alias bri='brew install'
@@ -127,6 +130,19 @@ export EDITOR=vim
 eval "$(direnv hook $SHELL)"
 
 # THIS_DIR="$(cd $(dirname $0); pwd)/"
+
+# その他
+alias bp="v ~/.bash_profile"
+alias bpload="source ~/.bash_profile"
+nh() {
+  if [ $# -eq 0 ]; then
+    echo "使い方: nh コマンド [引数...]" >&2
+    return 1
+  fi
+
+  "$@" >/dev/null 2>&1 &   # 関数でもコマンドでもOK
+  disown -h                # シェル終了時に SIGHUP を送らない
+}
 
 # プライベート用の設定
 if [ -n $PRIVATEPC ]; then
