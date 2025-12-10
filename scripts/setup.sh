@@ -10,6 +10,8 @@ elif [ "$(expr substr $(uname -s) 1 5)" = 'Linux' ]; then
 elif [ "$(expr substr $(uname -s) 1 5)" = 'MINGW' ]; then
   # Windows
   cp "$SAMPLES_DIR.bash_profile" ~/.bash_profile
+  mkdir -p ~/.config/git
+  cp "$SAMPLES_DIR/git-prompt.sh" ~/.config/git/git-prompt.sh
 else
   echo "$(uname -a)"
 fi
