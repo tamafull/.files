@@ -1,3 +1,8 @@
+## 概要
+環境移行を楽にするために作ったリポジトリ
+symlinkにしたいかも
+
+## セットアップ
 1. ホームディレクトリにclone
 ```
 git clone git@github.com:tamafull/.files.git ~/.files
