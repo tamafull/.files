@@ -21,6 +21,11 @@ alias h='cd ~'
 alias dev='if [ -n "$DEV_DIR" ]; then cd "$DEV_DIR"; else cd "$HOME/dev"; fi'
 alias tools='if [ -n "$TOOLS_DIR" ]; then cd "$TOOLS_DIR"; else cd "$HOME/tools"; fi'
 
+# AI
+alias cld='claude'
+alias gmn='gemini'
+alias cdx='codex'
+
 # Git
 alias ga='git add'
 alias gd='git diff'
